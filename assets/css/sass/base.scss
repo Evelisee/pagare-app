@@ -1,1 +1,23 @@
-// your sass here
+// fonts impots
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+//-------------- Fonts
+	// Roboto
+	.roboto{
+		font-family: 'Roboto', sans-serif;
+		font-weight:400; 
+	}
+	.roboto-medium{
+		font-family: 'Roboto', sans-serif;
+		font-weight:500; 
+	}
+	.roboto-bold{
+		font-family: 'Roboto', sans-serif;
+		font-weight:700; 
+	}
+
+//-------------- Variables
+	// Colors	
+	$blue: #5aa3c3;
+	$green-light: #7dc9a8;
+	$grey-basic: #58585b;

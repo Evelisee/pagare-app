@@ -3,11 +3,53 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<title>Pagare App</title>
+
 		<!-- Angular Material style sheet -->
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body ng-app="pagare" ng-cloak>
+		<!-- ToolbarFixed -->
+		<md-toolbar md-scroll-shrink ng-controller="toolbarController">
+			<div class="md-toolbar-tools">
+				<md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeft()">
+					<i class="material-icons">menu</i>
+				</md-button>
+				<h3 class="roboto-bold">
+					<span>{{title}}</span>
+				</h3>
+			</div>
+		</md-toolbar>
+
+		<!-- Content -->
+		<!-- <section layout="row" flex> -->
+
+			<!-- ng-controller="sideNav" -->
+			<!-- Sidenav -->
+			<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+
+				<md-toolbar class="md-theme-indigo">
+					<h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+				</md-toolbar>
+
+				<md-content layout-margin>
+					<p>
+					This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+					</p>
+					<md-button ng-click="toggleLeft()" class="md-accent">
+					Close this Sidenav
+					</md-button>
+				</md-content>
+			</md-sidenav>
+
+			<!-- All Content Above -->
+			<md-content ui-view="content">
+			</md-content>
+
+		<!-- </section> -->
+
+
 
 		<!-- Angular Stuffs-->
 		<script src="assets/libs/angular/angular.js"></script>
@@ -22,5 +64,9 @@
 		<!-- main / config -->
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/config/config.js"></script>
+
+		<!-- Controllers -->
+		<script src="assets/js/controllers/main.js"></script>
+		<script src="assets/js/controllers/toolbarController.js"></script>
 	</body>
 </html>
