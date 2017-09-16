@@ -33,13 +33,18 @@
 					<h1 class="md-toolbar-tools">Disabled Backdrop</h1>
 				</md-toolbar>
 
-				<md-content layout-margin>
-					<p>
-					This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
-					</p>
-					<md-button ng-click="toggleLeft()" class="md-accent">
-					Close this Sidenav
-					</md-button>
+				<md-content layout-margin ng-controller="sideMenuController">
+					<ul>
+						<li>Ínício</li>
+						<li>Extrato</li>
+						<li>Pagamentos</li>
+						<li>Transferências</li>
+						<li>Cobranças</li>
+						<li>Recorrências</li>
+						<li ng-click="goToPage('contatos')">Contatos</li>
+					</ul>
+					<md-divider></md-divider>
+					<a href="">Sobre</a>
 				</md-content>
 			</md-sidenav>
 
@@ -68,5 +73,9 @@
 		<!-- Controllers -->
 		<script src="assets/js/controllers/main.js"></script>
 		<script src="assets/js/controllers/toolbarController.js"></script>
+		<script src="assets/js/controllers/sideMenuController.js"></script>
+
+			<!-- Contatos -->
+			<script src="assets/js/controllers/contatos/clientes/listaClientesController.js"></script>
 	</body>
 </html>
