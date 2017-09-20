@@ -1,0 +1,33 @@
+
+.md-toolbar-tools,
+md-toolbar.md-default-theme.md-hue-2:not(.md-menu-toolbar), md-toolbar.md-hue-2:not(.md-menu-toolbar) {
+  background: #6bcfa7;
+}
+
+/* Menu */
+md-list i,
+.mainMenu i {
+  color: #7dc9a8; 
+}
+
+.mainMenu i.defaultColor {
+  color: #606060; 
+}
+
+/* Tabs */
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+  color: #7dc9a8; 
+}
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+  color: #7dc9a8;
+  background: #7dc9a8; 
+}
+
+.yellowStar {
+  color: #ffc107; 
+}
+
+md-list-item.md-2-line, md-list-item.md-2-line > .md-no-style {
+  padding-top: 15px;
+}

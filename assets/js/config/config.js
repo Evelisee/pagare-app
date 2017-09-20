@@ -1,6 +1,6 @@
 angular.module('config', ['ngMaterial', 'ui.router'])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $qProvider) {
 
 	$stateProvider
 	.state('inicio', {
@@ -12,6 +12,8 @@ angular.module('config', ['ngMaterial', 'ui.router'])
 			}
 		}
 	})
+
+	// Contatos
 	.state('contatos', {
 		url: '/contatos',                   
 		views: {
@@ -22,7 +24,19 @@ angular.module('config', ['ngMaterial', 'ui.router'])
 		}
 	})
 
+	.state('contatos.profile', {
+		url: '/contatos/profile/:id',                   
+		views: {
+			'content@': {
+				templateUrl: 'components/contatos/profile.html',
+				// controller: 'Login'
+			}
+		}
+	})
+
 	;
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('inicio');
+
+	$qProvider.errorOnUnhandledRejections(false);
 });

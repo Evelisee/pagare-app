@@ -1,19 +1,34 @@
-<md-subheader class="md-no-sticky">Favoritos</md-subheader>
-<md-list-item class="md-3-line" ng-repeat="favorito in favoritos">
-	<i class="md-avatar material-icons">star_rate</i>
-	<div class="md-list-item-text" layout="column">
-		<h3>{{favorito.nome}}</h3>
-		<h4>{{favorito.email}}</h4>
-	</div>
-</md-list-item>
+<!-- Loading -->
+<div class="progress-circular-loading" ng-if="loadingClientes">
+	<md-progress-circular md-mode="indeterminate" class="md-green-apple"></md-progress-circular>
+</div>
 
-<md-divider></md-divider>
+<!-- Favoritos -->
+<div class="group-favoritos" ng-hide="countFavoritos.length < 1" ng-if="!loadingClientes">
+	<md-subheader class="md-no-sticky">Favoritos</md-subheader>
+	<md-list-item class="md-3-line" ng-repeat="favorito in countFavoritos = (partners | filter:{favourite:true})">
+		<i class="md-avatar material-icons">star_rate</i>
+		<div class="md-list-item-text" layout="column">
+			<h3>{{favorito.nome}}</h3>
+			<h4>{{favorito.email}}</h4>
+		</div>
+	</md-list-item>
+	<md-divider></md-divider>
+</div>
 
-<md-subheader class="md-no-sticky">Todos</md-subheader>
-<md-list-item class="md-3-line" ng-repeat="cliente in todos">
-	<i class="md-avatar material-icons">star_rate</i>
-	<div class="md-list-item-text" layout="column">
-		<h3>{{cliente.nome}}</h3>
-		<h4>{{cliente.email}}</h4>
-	</div>
-</md-list-item>
+<!-- Todos -->
+<div class="group-all" ng-hide="countPartners.length < 1" ng-if="!loadingClientes" ng-click="seePartner(cliente.id)">
+	<md-subheader class="md-no-sticky">Todos</md-subheader>
+	<md-list-item class="md-3-line" ng-repeat="cliente in countPartners = (partners)">
+		<i class="md-avatar material-icons">star_rate</i>
+		<div class="md-list-item-text" layout="column">
+			<h3>{{cliente.name}}</h3>
+			<h4>{{cliente.email}}</h4>
+		</div>
+	</md-list-item>
+</div>
+
+<!-- Nenhum -->
+<div class="group-none" ng-show="(countFavoritos.length + countPartners.length) == 0" ng-if="!loadingClientes">
+	Nenhum cliente cadastrado!
+</div>

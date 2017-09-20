@@ -21,3 +21,31 @@
 	$blue: #5aa3c3;
 	$green-light: #7dc9a8;
 	$grey-basic: #58585b;
+
+
+//------------ Progress
+	.progress-circular-loading{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+	.md-green-apple{
+		color: $green-light;
+		fill:$green-light;
+
+		path{
+			stroke: $green-light;
+		}
+	}
+
+	.tabs-middle{
+		.md-tab{
+			font-family: 'Roboto';
+			font-size: 13px;
+			color: #7dc9a8;
+			padding: 12px 15px;
+			text-align: center;
+		}
+	}

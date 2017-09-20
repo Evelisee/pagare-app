@@ -15,3 +15,49 @@
 .roboto-bold {
   font-family: 'Roboto', sans-serif;
   font-weight: 700; }
+
+.progress-circular-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%; }
+
+.md-green-apple {
+  color: #7dc9a8;
+  fill: #7dc9a8; }
+  .md-green-apple path {
+    stroke: #7dc9a8; }
+
+.tabs-middle .md-tab {
+  font-family: 'Roboto';
+  font-size: 13px;
+  color: #7dc9a8;
+  padding: 12px 15px;
+  text-align: center; }
+
+.md-toolbar-tools,
+md-toolbar.md-default-theme.md-hue-2:not(.md-menu-toolbar), md-toolbar.md-hue-2:not(.md-menu-toolbar) {
+  background: #6bcfa7; }
+
+/* Menu */
+md-list i,
+.mainMenu i {
+  color: #7dc9a8; }
+
+.mainMenu i.defaultColor {
+  color: #606060; }
+
+/* Tabs */
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+  color: #7dc9a8; }
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+  color: #7dc9a8;
+  background: #7dc9a8; }
+
+.yellowStar {
+  color: #ffc107; }
+
+md-list-item.md-2-line, md-list-item.md-2-line > .md-no-style {
+  padding-top: 15px; }
