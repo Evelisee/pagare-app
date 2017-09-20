@@ -3,6 +3,8 @@ angular.module('controllers')
 .controller('listaClientesController', function($scope, $rootScope, $mdSidenav, $state, $timeout, contatos){
 
 	$scope.loadingClientes = true;
+	$rootScope.title = 'Contatos';
+	$rootScope.greyBlock = true;
 	
 	// Puxando clientes
 	var retornoClientes = contatos.retornarClientes();

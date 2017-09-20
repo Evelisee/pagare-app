@@ -13,7 +13,7 @@
 	<body ng-app="pagare" ng-cloak>
 		<!-- ToolbarFixed -->
 		<md-toolbar md-scroll-shrink ng-controller="toolbarController">
-			<div class="md-toolbar-tools">
+			<div class="md-toolbar-tools" ng-class="greyBlock ? 'md-grey-block' : 'md-white-block'">
 				<md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeft()">
 					<i class="material-icons">menu</i>
 				</md-button>
@@ -45,7 +45,7 @@
 
 			<md-list ng-controller="sideMenuController" class="mainMenu">
 				<md-item ng-repeat="navigation in sideNav | filter: {last:false}">
-					<a>
+					<a ui-sref="{{navigation.state}}">
 						<md-item-content md-ink-ripple layout="row" layout-align="start center">
 							<div class="inset">
 								<i class="material-icons">{{navigation.icon}}</i>

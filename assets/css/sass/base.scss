@@ -21,6 +21,30 @@
 	$blue: #5aa3c3;
 	$green-light: #7dc9a8;
 	$grey-basic: #58585b;
+	$grey-background: #f5f5f5;
+
+
+	.md-grey-block{
+		background-color: $grey-background;
+		font-size: 16px;
+		color: $grey-basic;
+	}
+
+	.md-white-block{
+		background-color:white;
+		font-size: 16px;
+		color: black;
+		text-align: center;
+		box-shadow: 1px 1px 13px #afafaf;
+
+		h3{
+			text-align: center;
+			display: block;
+			width: 80%;
+			font-weight: bolder;
+			text-transform: uppercase;
+		}
+	}
 
 
 //------------ Progress

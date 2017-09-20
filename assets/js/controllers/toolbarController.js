@@ -5,6 +5,7 @@ angular.module('controllers')
 	$scope.toggleLeft = buildToggler('left');
 	$scope.toggleRight = buildToggler('right');
 	$rootScope.title = 'Pagare';
+	$rootScope.greyBlock = false;
 
 	function buildToggler(componentId) {
 		return function() {
