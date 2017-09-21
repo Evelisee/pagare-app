@@ -31,3 +31,104 @@ md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
 md-list-item.md-2-line, md-list-item.md-2-line > .md-no-style {
   padding-top: 15px;
 }
+
+
+// Profile
+
+.content-profile{}
+
+.content-profile{
+	margin: 0;
+
+	.content-header{
+		display: flex;
+		width: 100%;
+		position: relative;
+		background: url(https://www.w3schools.com/css/trolltunga.jpg) no-repeat top center; 
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		align-items: center;
+		height: 200px;
+		background-size: cover;
+
+		h2{
+			color: white;
+			align-self: flex-end;
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: row;
+			align-items: center;
+			width: 201px;
+			font-family: 'Roboto';
+			font-weight: 200;
+			font-size: 28px;
+		}
+
+		i.star-round{
+			position: absolute;
+			right: 20px;
+			bottom: -20px;
+			width: 56px;
+			height: 56px;
+			background: #edd057;
+			font-size: 25px;
+			padding: 14px 16px;
+			border-radius: 100%;
+			z-index: 9999;
+			color: #ffeb97;
+		}
+	}
+}
+.profile-info{
+	.star-round{
+		background: #edd057;
+	}
+	.md-list-item-text{
+		margin-top: 0!important;
+		margin-left: 30px!important;
+
+		span{
+			opacity: 0.54;
+			font-family: 'Roboto';
+			font-size: 14px;
+			color: #000000;
+			display: block;
+			margin-top: 7px;
+		}
+	}
+
+	.md-block{
+		margin: 0;
+		padding:0;
+	}
+
+	input{
+		border: 0;
+	}
+	md-icon{
+		display:inline-block;
+	}
+	.no-padding-top .md-list-item-text{
+		margin-left: 50px!important;
+	}
+}
+
+.top-header{
+	top: 56px;
+}
+.edit-info{
+	background:white;
+
+	.md-list-item-text{
+		margin-left:20px!important;
+		width: 100%;
+	}
+	.block-input{
+		width: 100%!important;
+	}
+
+	.no-icon{
+		margin-left: 44px!important;
+	}
+}

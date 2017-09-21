@@ -24,12 +24,23 @@
 	$grey-background: #f5f5f5;
 
 
+
+	// md-content{
+	// 	overflow-y: hidden;
+	// }
+	.uppercase{
+		text-transform:  uppercase;
+	}
+	.no-padding-top{
+		padding-top:0!important;
+	}
+
+//-------------- MD-TOOLBAR
 	.md-grey-block{
 		background-color: $grey-background;
 		font-size: 16px;
 		color: $grey-basic;
 	}
-
 	.md-white-block{
 		background-color:white;
 		font-size: 16px;
@@ -44,6 +55,35 @@
 			font-weight: bolder;
 			text-transform: uppercase;
 		}
+	}
+	.md-white-fixed{
+		background-color:white!important;
+		position: fixed;
+	}
+	.md-no-color{
+		background: transparent!important;
+		position: fixed;
+
+		i{
+			font-size:30px;
+		}
+	}
+	.black-button i{
+		color:black;
+	}
+	.save-button{
+		width: 90%;
+		margin: 10px auto;
+		height: 40px;
+		display: block;
+		border-radius: 3px;
+		background-color: #7dc9a8;
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #ffffff;
+		border: 0;
+		text-decoration: none solid white;
+		text-align: center;
 	}
 
 
@@ -65,11 +105,24 @@
 	}
 
 	.tabs-middle{
+		.md-stretch-tabs{
+			border-width: 0 0 1px;
+			border-style: solid;
+			border: none;
+			background: #f5f5f5!important;
+		}
 		.md-tab{
 			font-family: 'Roboto';
 			font-size: 13px;
-			color: #7dc9a8;
 			padding: 12px 15px;
 			text-align: center;
+		}
+		.md-tab{
+			color:$grey-basic;
+			font-weight: initial;
+		}
+		.md-tab.md-active{
+			color: #7dc9a8;
+			font-weight: bold;
 		}
 	}

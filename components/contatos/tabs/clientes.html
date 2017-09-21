@@ -1,10 +1,10 @@
 <!-- Loading -->
-<div class="progress-circular-loading" ng-if="loadingClientes">
+<div class="progress-circular-loading" ng-show="loadingClientes">
 	<md-progress-circular md-mode="indeterminate" class="md-green-apple"></md-progress-circular>
 </div>
 
 <!-- Favoritos -->
-<div class="group-favoritos" ng-hide="countFavoritos.length < 1" ng-if="!loadingClientes">
+<div class="group-favoritos" ng-hide="countFavoritos.length < 1" ng-show="!loadingClientes">
 	<md-subheader class="md-no-sticky">Favoritos</md-subheader>
 	<md-list-item class="md-3-line" ng-repeat="favorito in countFavoritos = (partners | filter:{favourite:true})">
 		<i class="md-avatar material-icons">star_rate</i>
@@ -17,9 +17,9 @@
 </div>
 
 <!-- Todos -->
-<div class="group-all" ng-hide="countPartners.length < 1" ng-if="!loadingClientes" ng-click="seePartner(cliente.id)">
+<div class="group-all" ng-hide="countPartners.length < 1" ng-show="!loadingClientes">
 	<md-subheader class="md-no-sticky">Todos</md-subheader>
-	<md-list-item class="md-3-line" ng-repeat="cliente in countPartners = (partners)">
+	<md-list-item class="md-3-line" ng-repeat="cliente in countPartners = (partners)" ng-click="seePartner(cliente.id)">
 		<i class="md-avatar material-icons">star_rate</i>
 		<div class="md-list-item-text" layout="column">
 			<h3>{{cliente.name}}</h3>

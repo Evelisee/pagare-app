@@ -1,0 +1,169 @@
+<md-toolbar md-scroll-shrink ng-controller="toolbarController" class="md-white-fixed black-button">
+	<div class="md-toolbar-tools">
+		<md-button class="md-icon-button" aria-label="menu" ng-click="goBack()">
+			<i class="material-icons">keyboard_arrow_left</i>
+		</md-button>
+	</div>
+</md-toolbar>
+
+<!-- Loading -->
+<div class="progress-circular-loading" ng-show="loadingData">
+	<md-progress-circular md-mode="indeterminate" class="md-green-apple"></md-progress-circular>
+</div>
+
+<div flex-gt-sm="100" ng-show="!loadingData" flex>
+	<md-content class="edit-info top-header">
+		<md-list flex>
+			<md-list-item >
+				<i class="material-icons">keyboard</i>
+				<div class="md-list-item-text">
+					<md-input-container class="block-input">
+					<label>CPF ou CNPJ</label>
+						<input ng-model="editUser.identification" placeholder="Digite um CPF">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<i class="material-icons">account_circle</i>
+				<div class="md-list-item-text">
+					<md-input-container class="block-input">
+					<label>Nome para boleto</label>
+						<input ng-model="editUser.name" placeholder="Digite um nome">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<i class="material-icons">email</i>
+				<div class="md-list-item-text">
+					<md-input-container class="block-input">
+					<label>Email</label>
+						<input ng-model="editUser.email" placeholder="Digite um email">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+
+			<md-list-item>
+				<i class="material-icons">phone</i>
+				<div class="md-list-item-text">
+					<md-input-container class="block-input">
+					<label>Celular</label>
+						<input ng-model="editUser.main_phone" placeholder="Digite um email">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item>
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Telefone</label>
+						<input ng-model="editUser.home_phone" placeholder="Digite um email">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<i class="material-icons">location_on</i>
+				<div class="md-list-item-text">
+					<md-input-container class="block-input">
+					<label>CEP</label>
+						<input ng-model="editUser.zipcode" placeholder="Digite o CEP">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>UF</label>
+					<md-select ng-model="editUser.state">
+						<md-option><em>Selecione</em></md-option>
+						<md-option ng-repeat="estado in estados" ng-value="estado.id">
+							{{estado.code}}
+						</md-option>
+					</md-select>
+					</md-input-container>
+				</div>
+
+				<span flex></span>
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Cidade</label>
+						<input ng-model="editUser.city" placeholder="Cidade">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Bairro</label>
+						<input ng-model="editUser.district" placeholder="Bairro">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Endereço</label>
+						<input ng-model="editUser.street" placeholder="Endereço">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Número</label>
+						<input ng-model="editUser.number" placeholder="Número">
+					</md-input-container>
+				</div>
+
+				<span flex></span>
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Complemento</label>
+						<input ng-model="editUser.complement" placeholder="Cpl">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<i class="material-icons">account_balance</i>
+				<div class="md-list-item-text">
+					<md-input-container class="block-input">
+					<label>Banco</label>
+					<md-select ng-model="editUser.bank">
+						<md-option><em>Selecione</em></md-option>
+						<md-option ng-repeat="banco in bancos" ng-value="banco.id">
+							{{banco.description}}
+						</md-option>
+					</md-select>
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+			<md-list-item >
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Agência</label>
+						<input ng-model="editUser.zip_code" placeholder="Agência">
+					</md-input-container>
+				</div>
+
+				<span flex></span>
+				<div class="md-list-item-text no-icon">
+					<md-input-container class="block-input">
+					<label>Conta</label>
+						<input ng-model="editUser.zip_code" placeholder="Banco">
+					</md-input-container>
+				</div>
+			</md-list-item>
+
+		</md-list>
+			<button class="save-button roboto">Salvar</button>
+	</md-content>
+</div>

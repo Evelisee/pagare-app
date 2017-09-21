@@ -8,7 +8,6 @@ angular.module('config', ['ngMaterial', 'ui.router'])
 		views: {
 			'content@': {
 				templateUrl: 'components/inicio/home.html',
-				// controller: 'Login'
 			}
 		}
 	})
@@ -19,17 +18,26 @@ angular.module('config', ['ngMaterial', 'ui.router'])
 		views: {
 			'content@': {
 				templateUrl: 'components/contatos/contatos.html',
-				// controller: 'Login'
 			}
 		}
 	})
 
 	.state('contatos.profile', {
-		url: '/contatos/profile/:id',                   
+		url: '/perfil/:id',                   
 		views: {
 			'content@': {
 				templateUrl: 'components/contatos/profile.html',
-				// controller: 'Login'
+				controller: 'profileController'
+			}
+		}
+	})
+
+	.state('contatos.edit', {
+		url: '/edit/:id',                   
+		views: {
+			'content@': {
+				templateUrl: 'components/contatos/edit-partner.html',
+				controller: 'editController'
 			}
 		}
 	})

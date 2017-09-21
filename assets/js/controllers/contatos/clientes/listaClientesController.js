@@ -1,24 +1,24 @@
 angular.module('controllers')
 
 .controller('listaClientesController', function($scope, $rootScope, $mdSidenav, $state, $timeout, contatos){
-
-	$scope.loadingClientes = true;
 	$rootScope.title = 'Contatos';
 	$rootScope.greyBlock = true;
-	
 	// Puxando clientes
-	var retornoClientes = contatos.retornarClientes();
-	retornoClientes.then(function(data){
-		$scope.partners = data.results;
-		$timeout(function() {
+	if($rootScope.partners == undefined){
+		$scope.loadingClientes = true;
+		var retornoClientes = contatos.retornarClientes();
+		retornoClientes.then(function(data){
+			$rootScope.partners = data.results;
 			$scope.loadingClientes = false;
-		}, 400);
-	}).catch(function(error){
-		// inserir warning
-	});
-
+		}).catch(function(error){
+			// inserir warning
+		});
+	} else {
+		$scope.loadingClientes = false;
+	}
 
 	$scope.seePartner = function(idProfile){
+		console.log(idProfile);
 		$state.go('contatos.profile', {id:idProfile});
 	}
 	

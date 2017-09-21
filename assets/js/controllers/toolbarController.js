@@ -1,6 +1,6 @@
 angular.module('controllers')
 
-.controller('toolbarController', function($scope, $rootScope, $mdSidenav){
+.controller('toolbarController', function($scope, $rootScope, $mdSidenav, $mdMenu, $window){
 
 	$scope.toggleLeft = buildToggler('left');
 	$scope.toggleRight = buildToggler('right');
@@ -12,4 +12,13 @@ angular.module('controllers')
 			$mdSidenav(componentId).toggle();
 		};
 	}
+
+	$scope.goBack = function(){
+		$window.history.back();
+	}
+
+	$scope.openMenu = function($mdMenu, ev) {
+      originatorEv = ev;
+      $mdMenu.open(ev);
+    };
 });

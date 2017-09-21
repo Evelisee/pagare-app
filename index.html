@@ -11,18 +11,6 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body ng-app="pagare" ng-cloak>
-		<!-- ToolbarFixed -->
-		<md-toolbar md-scroll-shrink ng-controller="toolbarController">
-			<div class="md-toolbar-tools" ng-class="greyBlock ? 'md-grey-block' : 'md-white-block'">
-				<md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeft()">
-					<i class="material-icons">menu</i>
-				</md-button>
-				<h3 class="roboto-bold">
-					<span>{{title}}</span>
-				</h3>
-			</div>
-		</md-toolbar>
-
 		<!-- Content -->
 
 		<!-- Sidenav -->
@@ -44,15 +32,13 @@
 			</md-toolbar>
 
 			<md-list ng-controller="sideMenuController" class="mainMenu">
-				<md-item ng-repeat="navigation in sideNav | filter: {last:false}">
-					<a ui-sref="{{navigation.state}}">
-						<md-item-content md-ink-ripple layout="row" layout-align="start center">
-							<div class="inset">
-								<i class="material-icons">{{navigation.icon}}</i>
-							</div>
-							<div class="inset">{{navigation.item}}</div>
-						</md-item-content>
-					</a>
+				<md-item ng-repeat="navigation in sideNav | filter: {last:false}" ng-click="goToPage(navigation.state)">
+					<md-item-content  layout="row" layout-align="start center">
+						<div class="inset">
+							<i class="material-icons">{{navigation.icon}}</i>
+						</div>
+						<div class="inset">{{navigation.item}}</div>
+					</md-item-content>
 				</md-item>
 
 				<md-divider></md-divider>
@@ -67,11 +53,12 @@
 						</md-item-content>
 					</a>
 				</md-item>
-			</md-sidenav>
+			</md-list>
+		</md-sidenav>
 
 			<!-- All Content Above -->
-			<md-content ui-view="content">
-			</md-content>
+			<div ui-view="content">
+			</div>
 
 
 
@@ -83,7 +70,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 
 		<!-- Angular Material Library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
 
 		<!-- main / config -->
 		<script src="assets/js/main.js"></script>
@@ -96,6 +83,8 @@
 
 			<!-- Contatos -->
 			<script src="assets/js/controllers/contatos/clientes/listaClientesController.js"></script>
+			<script src="assets/js/controllers/contatos/clientes/profileController.js"></script>
+			<script src="assets/js/controllers/contatos/clientes/editController.js"></script>
 
 		<!-- Services -->
 		<script src="assets/js/services/main.js"></script>
