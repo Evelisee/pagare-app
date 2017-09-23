@@ -1,2 +1,2 @@
 // Module Base
-angular.module('pagare', ['config', 'controllers', 'services'])
+angular.module('pagare', ['config', 'controllers', 'services', 'directives'])

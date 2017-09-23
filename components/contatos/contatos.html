@@ -14,9 +14,11 @@
 		<md-tabs class="tabs-middle" md-dynamic-height md-border-bottom md-stretch-tabs="always">
 			<!-- Clientes -->
 			<md-tab label="clientes">
-				<md-content class="md-padding" ng-controller="listaClientesController">
-					<div ng-include="'components/contatos/tabs/clientes.html'"></div>
-				</md-content>
+				<div flex layout="row">
+					<md-content class="md-padding" ng-controller="listaClientesController" flex>
+						<div ng-include="'components/contatos/tabs/clientes.html'"></div>
+					</md-content>
+				</div>
 			</md-tab>
 			<!-- Assintantes -->
 			<md-tab label="assinantes">

@@ -94,6 +94,22 @@ angular.module('services')
 			.catch(function(error){
 				return error.data;
 			});
+		},
+		salvarDadosContato:function(cpfUser, dadosNovos){
+			var data = JSON.stringify(dadosNovos);
+			var deferred = $q.defer();
+			return $http.post('http://dev.api.pagare.io/address/?Identification='+ cpfUser +'%2F&format=json/?Content='+data , {
+				headers : {
+					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc='
+				}
+			}).
+			then(function(response) {
+				console.log(response)
+				return response.data;
+			})
+			.catch(function(error){
+				return error.data;
+			});
 		}
 	}
 })

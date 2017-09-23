@@ -50,6 +50,12 @@
   .md-no-color i {
     font-size: 30px; }
 
+.md-green-fixed {
+  background: #7dc9a8 !important;
+  color: white; }
+  .md-green-fixed i {
+    color: white !important; }
+
 .black-button i {
   color: black; }
 

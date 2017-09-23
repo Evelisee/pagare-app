@@ -42,6 +42,16 @@ angular.module('config', ['ngMaterial', 'ui.router'])
 		}
 	})
 
+	.state('contatos.novo', {
+		url: '/adicionar',                   
+		views: {
+			'content@': {
+				templateUrl: 'components/contatos/create-partner.html',
+				controller: 'novoClienteController'
+			}
+		}
+	})
+
 	;
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('inicio');

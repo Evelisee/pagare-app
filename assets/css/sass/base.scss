@@ -68,6 +68,11 @@
 			font-size:30px;
 		}
 	}
+	.md-green-fixed{
+		background:$green-light!important;
+		color:white;
+		i{color:white!important;}
+	}
 	.black-button i{
 		color:black;
 	}

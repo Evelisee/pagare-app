@@ -1,8 +1,11 @@
-<md-toolbar md-scroll-shrink ng-controller="toolbarController" class="md-white-fixed black-button">
+<md-toolbar md-scroll-shrink ng-controller="toolbarController" class="md-green-fixed black-button">
 	<div class="md-toolbar-tools">
 		<md-button class="md-icon-button" aria-label="menu" ng-click="goBack()">
 			<i class="material-icons">keyboard_arrow_left</i>
 		</md-button>
+		<h3 class="roboto-bold">
+			<span>Novo Cliente</span>
+		</h3>
 	</div>
 </md-toolbar>
 
@@ -12,10 +15,10 @@
 </div>
 
 <div flex-gt-sm="100" ng-show="!loadingData" flex>
-	<md-content class="edit-info top-header">
+	<md-content class="edit-info">
 		<form name="edicaoContato" ng-submit="edicaoContato.$valid && salvarDados()" novalidate>
 			<formulario-cadastro></formulario-cadastro>
-			<button class="save-button roboto" type="submit">Salvar</button>
+			<button class="save-button roboto" type="submit">Adicionar</button>
 		</form>
 	</md-content>
 </div>

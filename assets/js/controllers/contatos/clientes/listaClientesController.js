@@ -21,5 +21,9 @@ angular.module('controllers')
 		console.log(idProfile);
 		$state.go('contatos.profile', {id:idProfile});
 	}
+
+	$scope.addNovoContato = function(){
+		$state.go('contatos.novo');
+	}
 	
 })

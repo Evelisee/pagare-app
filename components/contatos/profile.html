@@ -35,7 +35,7 @@
 
 	<md-card class="content-profile">
 		<div class="content-header">
-			<h2>Karla Maria</h2>
+			<h2>{{user.name}}</h2>
 			<i class="material-icons star-round" ng-if="user.favourite">star_rate</i>
 		</div>
 	</md-card>
@@ -91,7 +91,7 @@
 				<md-list-item class="md-2-line" ng-if="user.address">
 					<i class="material-icons">location_on</i>
 						<div class="md-list-item-text">
-							<h3>Rua Monteiro Lobato, 84, apto 902 Ocian, Praia Grande / SP 11704-150</h3>
+							<h3>{{user.address}}, {{user.number}}, {{user.complement}}, {{user.city}} / SP {{user.zipcode}}</h3>
 							<md-input-container md-no-float class="md-block">
 								<span>Endereço</span>
 							</md-input-container>

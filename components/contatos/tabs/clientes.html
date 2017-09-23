@@ -32,3 +32,9 @@
 <div class="group-none" ng-show="(countFavoritos.length + countPartners.length) == 0" ng-if="!loadingClientes">
 	Nenhum cliente cadastrado!
 </div>
+
+<md-fab-trigger>
+	<md-button aria-label="menu" class="md-fab md-warn" ng-click="addNovoContato()">
+		<i class="material-icons">plus_one</i>
+	</md-button>
+</md-fab-trigger>
