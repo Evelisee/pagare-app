@@ -132,3 +132,36 @@ md-list-item.md-2-line, md-list-item.md-2-line > .md-no-style {
 		margin-left: 44px!important;
 	}
 }
+
+.group-all, 
+.group-favoritos {
+	h4{
+		color: #000;
+		opacity: 0.6;
+	}
+	i.md-avatar{
+    	margin-top: 30px;
+    	color: #a7a9ab;
+    	outline: none;
+	}
+}
+.group-favoritos {
+	i.md-avatar{
+		color: #ffc107;
+	}
+}
+
+
+.height-calc{
+	height: calc(100% - 123px);
+
+	.novo-contato{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		button{
+			background-color: #7dc9a8!important;
+		}
+	}
+}

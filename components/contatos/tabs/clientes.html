@@ -4,12 +4,12 @@
 </div>
 
 <!-- Favoritos -->
-<div class="group-favoritos" ng-hide="countFavoritos.length < 1" ng-show="!loadingClientes">
+<div class="group-favoritos" ng-hide="countFavoritos.length < 1" ng-if="!loadingClientes">
 	<md-subheader class="md-no-sticky">Favoritos</md-subheader>
 	<md-list-item class="md-3-line" ng-repeat="favorito in countFavoritos = (partners | filter:{favourite:true})">
-		<i class="md-avatar material-icons">star_rate</i>
+		<i class="md-avatar material-icons" ng-click="favoriteChange(favorito)">star_rate</i>
 		<div class="md-list-item-text" layout="column">
-			<h3>{{favorito.nome}}</h3>
+			<h3>{{favorito.name}}</h3>
 			<h4>{{favorito.email}}</h4>
 		</div>
 	</md-list-item>
@@ -17,11 +17,11 @@
 </div>
 
 <!-- Todos -->
-<div class="group-all" ng-hide="countPartners.length < 1" ng-show="!loadingClientes">
+<div class="group-all" ng-hide="countPartners.length < 1" ng-show="!loadingClientes"  ng-if="!loadingClientes">
 	<md-subheader class="md-no-sticky">Todos</md-subheader>
-	<md-list-item class="md-3-line" ng-repeat="cliente in countPartners = (partners)" ng-click="seePartner(cliente.id)">
-		<i class="md-avatar material-icons">star_rate</i>
-		<div class="md-list-item-text" layout="column">
+	<md-list-item class="md-3-line" ng-repeat="cliente in countPartners = (partners)">
+		<i class="md-avatar material-icons" ng-click="favoriteChange(cliente)">star_rate</i>
+		<div class="md-list-item-text" layout="column" ng-click="seePartner(cliente.id)">
 			<h3>{{cliente.name}}</h3>
 			<h4>{{cliente.email}}</h4>
 		</div>
@@ -33,7 +33,7 @@
 	Nenhum cliente cadastrado!
 </div>
 
-<md-fab-trigger>
+<md-fab-trigger class="novo-contato">
 	<md-button aria-label="menu" class="md-fab md-warn" ng-click="addNovoContato()">
 		<i class="material-icons">plus_one</i>
 	</md-button>

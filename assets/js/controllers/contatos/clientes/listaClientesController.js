@@ -25,5 +25,14 @@ angular.module('controllers')
 	$scope.addNovoContato = function(){
 		$state.go('contatos.novo');
 	}
+
+	$scope.favoriteChange = function(objeto){
+		objeto.favourite = !objeto.favourite;
+		var retornoFavorito = contatos.atualizarFavorito(objeto.id, objeto.favourite);
+		retornoClientes.then(function(data){
+		}).catch(function(error){
+			// inserir warning
+		});
+	}
 	
 })

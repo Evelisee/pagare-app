@@ -36,7 +36,7 @@
   .md-white-block h3 {
     text-align: center;
     display: block;
-    width: 100%;
+    width: 80%;
     font-weight: bolder;
     text-transform: uppercase; }
 
@@ -197,48 +197,60 @@ md-list-item.md-2-line, md-list-item.md-2-line > .md-no-style {
   .edit-info .no-icon {
     margin-left: 44px !important; }
 
+.group-all h4,
+.group-favoritos h4 {
+  color: #000;
+  opacity: 0.6; }
+.group-all i.md-avatar,
+.group-favoritos i.md-avatar {
+  margin-top: 30px;
+  color: #a7a9ab;
+  outline: none; }
+
+.group-favoritos i.md-avatar {
+  color: #ffc107; }
+
+.height-calc {
+  height: calc(100% - 123px); }
+  .height-calc .novo-contato {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+    .height-calc .novo-contato button {
+      background-color: #7dc9a8 !important; }
+
 /* Branndon */
-  .progress-account{
-    display: block;
-    background: #f5f5f5;
-    padding: 20px 14px;
-    border-radius: 50%;
-    font-size: 24px;
-  }
-  .header-inicio{
-    background-color: #5aa3c3;
-    color: white;
-    width: 98%;
-  }
-  .header-inicio i{
-    vertical-align: middle;
-  }
+.progress-account {
+  display: block;
+  background: #f5f5f5;
+  padding: 20px 14px;
+  border-radius: 50%;
+  font-size: 24px; }
 
-  .header-inicio:hover{
-    background-color: #70b7d6!important;
-  }
+.header-inicio {
+  background-color: #5aa3c3;
+  color: white;
+  width: 98%; }
 
-  md-toolbar.md-tall{
-    min-height: 200px;
-    max-height: 200px;
-  }
-  md-toolbar.md-default-theme.md-hue-2:not(.md-menu-toolbar),
-  md-toolbar.md-hue-2:not(.md-menu-toolbar){
-    background: #82e4bc;
-  }
+.header-inicio i {
+  vertical-align: middle; }
 
-  md-sidenav svg{
-    margin-bottom: 50px;
-  }
+.header-inicio:hover {
+  background-color: #70b7d6 !important; }
 
-  .formEditar input{
-    padding: 25px 0!important;
-  }
-  .formEditar i{
-    margin-top: -25px;
-  }
+md-toolbar.md-tall {
+  min-height: 200px;
+  max-height: 200px; }
 
+md-toolbar.md-default-theme.md-hue-2:not(.md-menu-toolbar),
+md-toolbar.md-hue-2:not(.md-menu-toolbar) {
+  background: #82e4bc; }
 
+md-sidenav svg {
+  margin-bottom: 50px; }
 
+.formEditar input {
+  padding: 25px 0 !important; }
 
-
+.formEditar i {
+  margin-top: -25px; }

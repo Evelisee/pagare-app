@@ -1,4 +1,4 @@
-<md-toolbar md-scroll-shrink ng-controller="toolbarController" class="md-green-fixed black-button">
+<md-toolbar md-scroll-shrink ng-controller="toolbarController" class="md-green-fixed black-button" flex="none">
 	<div class="md-toolbar-tools">
 		<md-button class="md-icon-button" aria-label="menu" ng-click="goBack()">
 			<i class="material-icons">keyboard_arrow_left</i>
@@ -8,6 +8,7 @@
 		</h3>
 	</div>
 </md-toolbar>
+<span flex></span>
 
 <!-- Loading -->
 <div class="progress-circular-loading" ng-show="loadingData">
