@@ -10,14 +10,29 @@
 </md-toolbar>
 
 <div layout="column" layout-align="top center">
-	<md-button class="md-raised">
+	<!-- <md-button class="md-raised">
 		<i class="material-icons">subtitles</i> 
+		Nova Cobrança
+	</md-button> -->
+
+	<md-button class="header-inicio">
+		<i class="material-icons">subtitles</i>
 		Nova Cobrança
 	</md-button>
 
-	<div class="white-frame">
-		<h2>Seu perfil</h2>
-		<p>Termine de preencher seu cadastro, isso pode agilizar ainda mais na contratação de serviços</p>
-		<md-button>Minha Conta</md-button>
-	</div>
+	<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+		<md-card-title>
+		<md-card-title-text>
+		<span class="md-headline">Seu perfil</span>
+		<span class="md-subhead">Termine de preencher seu cadastro, isso pode agilizar ainda mais na contratação de serviços</span>
+		</md-card-title-text>
+		<md-card-title-media>
+		<!-- <div class="md-media-lg card-media"></div> -->
+		<span class="progress-account">13%</span>
+		</md-card-title-media>
+		</md-card-title>
+		<md-card-actions layout="row" layout-align="begin center">
+		<md-button>Minha conta</md-button>
+		</md-card-actions>
+	</md-card>
 </div>
