@@ -18,7 +18,6 @@ angular.module('controllers')
 	}
 
 	$scope.seePartner = function(idProfile){
-		console.log(idProfile);
 		$state.go('contatos.profile', {id:idProfile});
 	}
 

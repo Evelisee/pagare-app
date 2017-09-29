@@ -13,9 +13,9 @@
 
 <div flex-gt-sm="100" ng-show="!loadingData" flex>
 	<md-content class="edit-info top-header">
-		<form name="edicaoContato" ng-submit="edicaoContato.$valid && salvarDados()" novalidate>
+		<form name="edicaoContato" novalidate>
 			<formulario-cadastro></formulario-cadastro>
-			<button class="save-button roboto" type="submit">Salvar</button>
+			<a class="save-button roboto" ng-click="salvarDados()">Salvar</a>
 		</form>
 	</md-content>
 </div>

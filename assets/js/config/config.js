@@ -33,7 +33,7 @@ angular.module('config', ['ngMaterial', 'ui.router'])
 	})
 
 	.state('contatos.edit', {
-		url: '/edit/:id',                   
+		url: '/edit/:id/:partner',                   
 		views: {
 			'content@': {
 				templateUrl: 'components/contatos/edit-partner.html',

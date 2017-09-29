@@ -32,7 +32,7 @@ angular.module('controllers')
 		$scope.loadingProfile = false;
 	}
 
-	$scope.editarPofile = function(cpfUser){
-		$state.go('contatos.edit', {id: cpfUser});
+	$scope.editarPofile = function(cpfUser, idPartner){
+		$state.go('contatos.edit', {id: cpfUser, partner:idPartner});
 	}
 })

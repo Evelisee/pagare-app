@@ -28,6 +28,7 @@ angular.module('services')
 				}
 			}).
 			then(function(response) {
+				console.log(response.data);
 				return response.data;
 			})
 			.catch(function(error){
@@ -38,7 +39,7 @@ angular.module('services')
 		},
 		retornarDadosEdicao:function(cpfIdentificacao){
 			var deferred = $q.defer();
-			return $http.get('http://dev.api.pagare.io/address/?Identification='+ cpfIdentificacao +'%2F&format=json', {
+			return $http.get('http://dev.api.pagare.io/address/147/?format=json', {
 				headers : {
 					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc='
 				}
@@ -52,13 +53,12 @@ angular.module('services')
 		},
 		retornarDadosBancos:function(){
 			var deferred = $q.defer();
-			return $http.get('http://dev.api.pagare.io/bank-account/?partner=266/?format=json', {
+			return $http.get('http://dev.api.pagare.io/bank-account/64/?format=json', {
 				headers : {
 					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc='
 				}
 			}).
 			then(function(response) {
-				console.log(response)
 				return response.data;
 			})
 			.catch(function(error){
@@ -74,7 +74,7 @@ angular.module('services')
 			}).
 			then(function(response) {
 				console.log(response)
-				return response.data;
+				return response.data.results;
 			})
 			.catch(function(error){
 				return error.data;
@@ -89,23 +89,57 @@ angular.module('services')
 			}).
 			then(function(response) {
 				console.log(response)
-				return response.data;
+				return response.data.results;
 			})
 			.catch(function(error){
 				return error.data;
 			});
 		},
 		salvarDadosContato:function(cpfUser, dadosNovos){
-			var data = JSON.stringify(dadosNovos);
-			var deferred = $q.defer();
-			return $http.put('http://dev.api.pagare.io/address/147', {
+			return $http({
+					url: 'http://dev.api.pagare.io/address/147/',
+					method: 'PUT',
 				headers : {
-					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc='
+					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc=',
+					'Content-Type': 'application/json'
 				},
-				Data: '{number:115}'
+				data: dadosNovos
 			}).
 			then(function(response) {
-				console.log(response)
+				return response.data;
+			})
+			.catch(function(error){
+				return error.data;
+			});
+		},
+		salvarDadosPartner:function(partnerId, dadosNovos){
+			return $http({
+					url: 'http://dev.api.pagare.io/partner/'+ partnerId +'/',
+					method: 'PATCH',
+				headers : {
+					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc=',
+					'Content-Type': 'application/json'
+				},
+				data: dadosNovos
+			}).
+			then(function(response) {
+				return response.data;
+			})
+			.catch(function(error){
+				return error.data;
+			});
+		},
+		salvarDadosBancoContato:function(partnerId, dadosNovos){
+			return $http({
+					url: 'http://dev.api.pagare.io/bank-account/64/',
+					method: 'PATCH',
+				headers : {
+					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc=',
+					'Content-Type': 'application/json'
+				},
+				data: dadosNovos
+			}).
+			then(function(response) {
 				return response.data;
 			})
 			.catch(function(error){
@@ -113,18 +147,35 @@ angular.module('services')
 			});
 		},
 		atualizarFavorito:function(idPartner, param){
-			// var data = JSON.stringify(dadosNovos);
 			var deferred = $q.defer();
-			return $http.patch('http://dev.api.pagare.io/partner/266', {
+			return $http({
+					url: 'http://dev.api.pagare.io/partner/266/',
+					method: 'PATCH',
 				headers : {
 					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc=',
 					'Content-Type': 'application/json',
-					'Access-Control-Allow-Origin': '*'
 				},
-				Data: '{favourite:'+ param +'}'
+				data: {favourite: param}
 			}).
 			then(function(response) {
 				console.log(response)
+				return response.data;
+			})
+			.catch(function(error){
+				return error.data;
+			});
+		},
+		criarNovoPartner:function(partnerId, dadosNovos){
+			return $http({
+					url: 'http://dev.api.pagare.io/partner/',
+					method: 'POST',
+				headers : {
+					'Authorization': 'Basic NDIwOTM2MjI3MTg6a3doIz9lNUZrITIwMTc=',
+					'Content-Type': 'application/json'
+				},
+				data: dadosNovos
+			}).
+			then(function(response) {
 				return response.data;
 			})
 			.catch(function(error){

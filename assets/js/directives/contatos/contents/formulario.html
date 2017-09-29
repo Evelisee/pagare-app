@@ -35,7 +35,7 @@
 		<div class="md-list-item-text">
 			<md-input-container class="block-input">
 			<label>Celular</label>
-				<input ng-model="editUser.main_phone" placeholder="Digite um email">
+				<input ng-model="editUser.main_phone" placeholder="Digite o celular">
 			</md-input-container>
 		</div>
 	</md-list-item>
@@ -44,7 +44,7 @@
 		<div class="md-list-item-text no-icon">
 			<md-input-container class="block-input">
 			<label>Telefone</label>
-				<input ng-model="editUser.home_phone" placeholder="Digite um email">
+				<input ng-model="editUser.home_phone" placeholder="Digite o telefone">
 			</md-input-container>
 		</div>
 	</md-list-item>
@@ -133,9 +133,9 @@
 
 	<md-list-item >
 		<div class="md-list-item-text no-icon">
-			<md-input-container class="block-input">
+			<md-input-container ng-model="editUser.bank" class="block-input">
 			<label>Agência</label>
-				<input ng-model="editUser.zip_code" placeholder="Agência">
+				<input ng-model="editUser.agency" placeholder="Agência">
 			</md-input-container>
 		</div>
 
@@ -143,7 +143,7 @@
 		<div class="md-list-item-text no-icon">
 			<md-input-container class="block-input">
 			<label>Conta</label>
-				<input ng-model="editUser.zip_code" placeholder="Banco">
+				<input ng-model="editUser.account_number" placeholder="Banco">
 			</md-input-container>
 		</div>
 	</md-list-item>
